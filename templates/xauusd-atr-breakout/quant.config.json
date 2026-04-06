@@ -5,10 +5,15 @@
   "runtime_target": "modal",
   "artifact_format": "python_bundle",
   "parameters": {
-    "lookback": 64,
+    "lookback": 96,
     "atr_window": 14,
     "breakout_window": 12,
-    "atr_mult": 0.05
+    "atr_mult": 0.05,
+    "near_breakout_atr": 0.18,
+    "pullback_atr": 0.35,
+    "min_momentum_atr": 0.08,
+    "fast_ema": 8,
+    "slow_ema": 34
   },
   "training_requirements": [
     "numpy",

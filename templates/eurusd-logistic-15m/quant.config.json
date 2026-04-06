@@ -1,0 +1,15 @@
+{
+  "pair": "EURUSD",
+  "timeframe": "15m",
+  "model_family": "sklearn",
+  "runtime_target": "edge",
+  "artifact_format": "weights_bundle",
+  "parameters": {
+    "lookback": 80,
+    "horizon": 4,
+    "threshold": 0.0008,
+    "min_confidence": 0.48
+  },
+  "training_requirements": ["numpy", "pandas", "scikit-learn", "joblib"],
+  "inference_requirements": ["numpy", "pandas", "scikit-learn", "joblib"]
+}

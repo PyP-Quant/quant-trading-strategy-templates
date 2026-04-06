@@ -1,0 +1,1 @@
+{"pair":"ETHUSDT","timeframe":"30m","model_family":"sklearn","runtime_target":"edge","artifact_format":"weights_bundle","parameters":{"lookback":120,"horizon":4,"threshold":0.005,"min_confidence":0.5},"training_requirements":["numpy","pandas","scikit-learn","joblib"],"inference_requirements":["numpy","pandas","scikit-learn","joblib"]}

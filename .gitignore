@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+*.joblib
+*.pkl
+*.onnx
+*.csv
+*.parquet
+out/
+runs/
+artifacts/

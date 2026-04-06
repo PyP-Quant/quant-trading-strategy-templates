@@ -1,0 +1,1 @@
+{"pair":"EURUSD","timeframe":"30m","model_family":"lightgbm","runtime_target":"modal","artifact_format":"joblib_bundle","parameters":{"lookback":140,"horizon":4,"threshold":0.001,"min_confidence":0.48},"training_requirements":["numpy","pandas","scikit-learn","lightgbm","joblib"],"inference_requirements":["numpy","pandas","scikit-learn","lightgbm","joblib"]}

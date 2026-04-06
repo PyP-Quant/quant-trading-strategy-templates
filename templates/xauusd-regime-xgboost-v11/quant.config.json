@@ -1,0 +1,17 @@
+{
+  "pair": "XAUUSD",
+  "timeframe": "1h",
+  "model_family": "xgboost",
+  "runtime_target": "modal",
+  "artifact_format": "joblib_bundle",
+  "parameters": {
+    "lookback": 220,
+    "horizon": 6,
+    "threshold": 0.0015,
+    "atr_mult": 1.0,
+    "min_direction_prob": 0.38,
+    "min_edge": 0.03
+  },
+  "training_requirements": ["numpy", "pandas", "scikit-learn", "xgboost", "joblib"],
+  "inference_requirements": ["numpy", "pandas", "scikit-learn", "xgboost", "joblib"]
+}

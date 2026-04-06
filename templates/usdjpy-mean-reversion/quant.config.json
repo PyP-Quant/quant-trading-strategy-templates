@@ -1,0 +1,1 @@
+{"pair":"USDJPY","timeframe":"1h","model_family":"custom_python","runtime_target":"edge","artifact_format":"python_bundle","parameters":{"lookback":100,"z_window":40,"entry_z":1.4},"training_requirements":["numpy","pandas"],"inference_requirements":["numpy","pandas"]}

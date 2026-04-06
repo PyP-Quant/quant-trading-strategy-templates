@@ -1,0 +1,1 @@
+{"pair":"EURUSD","timeframe":"1h","model_family":"sklearn","runtime_target":"container","artifact_format":"onnx","parameters":{"lookback":120,"horizon":3,"threshold":0.001,"min_confidence":0.5},"training_requirements":["numpy","pandas","scikit-learn","joblib","skl2onnx","onnx"],"inference_requirements":["numpy","onnxruntime"]}

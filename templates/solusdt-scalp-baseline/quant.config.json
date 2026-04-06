@@ -1,0 +1,16 @@
+{
+  "pair": "SOLUSDT",
+  "timeframe": "1m",
+  "model_family": "custom_python",
+  "runtime_target": "edge",
+  "artifact_format": "python_bundle",
+  "parameters": {
+    "lookback": 90,
+    "fast": 8,
+    "slow": 34,
+    "vol_window": 20,
+    "min_move": 0.0006
+  },
+  "training_requirements": ["numpy", "pandas"],
+  "inference_requirements": ["numpy", "pandas"]
+}

@@ -2,7 +2,7 @@
   "pair": "XAUUSD",
   "timeframe": "15m",
   "model_family": "custom Python",
-  "runtime_target": "edge",
+  "runtime_target": "modal",
   "artifact_format": "python_bundle",
   "parameters": {
     "lookback": 64,
@@ -10,8 +10,14 @@
     "breakout_window": 12,
     "atr_mult": 0.05
   },
-  "training_requirements": [],
-  "inference_requirements": [],
+  "training_requirements": [
+    "numpy",
+    "pandas"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas"
+  ],
   "symbol": "XAUUSD",
   "description": "XAUUSD ATR breakout rule baseline",
   "disclaimer": "Educational template only. Not financial advice."

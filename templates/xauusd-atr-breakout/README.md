@@ -8,6 +8,6 @@ The default gate is intentionally responsive so PPE produces more events than a 
 
 - `breakout_window`: `12`
 - `atr_mult`: `0.05`
-- no runtime package dependencies
+- assigned runtime: Modal, because this starter uses `pandas`
 
 If it overtrades, raise `atr_mult` first. If it is still too quiet, shorten `breakout_window`.

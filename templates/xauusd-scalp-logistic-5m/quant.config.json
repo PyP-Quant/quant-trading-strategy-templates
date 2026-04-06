@@ -1,0 +1,22 @@
+{
+  "name": "xauusd-scalp-logistic-5m",
+  "description": "sklearn LogisticRegression PyP Quant template for XAUUSD 5m.",
+  "symbol": "XAUUSD",
+  "timeframe": "5m",
+  "model_family": "sklearn LogisticRegression",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 100,
+    "horizon": 4,
+    "threshold": 0.003,
+    "min_confidence": 0.48,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

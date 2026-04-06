@@ -1,0 +1,22 @@
+{
+  "name": "naturalgas-volatility-rf-4h",
+  "description": "sklearn RandomForest PyP Quant template for NATGAS 4h.",
+  "symbol": "NATGAS",
+  "timeframe": "4h",
+  "model_family": "sklearn RandomForest",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 180,
+    "horizon": 6,
+    "threshold": 0.003,
+    "min_confidence": 0.5,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

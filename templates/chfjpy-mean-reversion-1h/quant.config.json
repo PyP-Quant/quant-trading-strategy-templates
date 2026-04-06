@@ -1,0 +1,21 @@
+{
+  "name": "chfjpy-mean-reversion-1h",
+  "description": "custom Python PyP Quant template for CHFJPY 1h.",
+  "symbol": "CHFJPY",
+  "timeframe": "1h",
+  "model_family": "custom Python",
+  "artifact_target": "python",
+  "parameters": {
+    "lookback": 140,
+    "horizon": 6,
+    "threshold": 0.0018,
+    "min_confidence": 0.5,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

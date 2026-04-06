@@ -1,0 +1,21 @@
+{
+  "name": "us30-mean-reversion-30m",
+  "description": "custom Python PyP Quant template for US30 30m.",
+  "symbol": "US30",
+  "timeframe": "30m",
+  "model_family": "custom Python",
+  "artifact_target": "python",
+  "parameters": {
+    "lookback": 120,
+    "horizon": 4,
+    "threshold": 0.0025,
+    "min_confidence": 0.5,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

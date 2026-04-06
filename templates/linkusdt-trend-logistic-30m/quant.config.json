@@ -1,0 +1,22 @@
+{
+  "name": "linkusdt-trend-logistic-30m",
+  "description": "sklearn LogisticRegression PyP Quant template for LINKUSDT 30m.",
+  "symbol": "LINKUSDT",
+  "timeframe": "30m",
+  "model_family": "sklearn LogisticRegression",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 120,
+    "horizon": 4,
+    "threshold": 0.003,
+    "min_confidence": 0.48,
+    "sl_percent": 0.4,
+    "tp_percent": 0.8
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

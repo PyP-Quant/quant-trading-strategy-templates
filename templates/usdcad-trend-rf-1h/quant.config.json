@@ -1,0 +1,22 @@
+{
+  "name": "usdcad-trend-rf-1h",
+  "description": "sklearn RandomForest PyP Quant template for USDCAD 1h.",
+  "symbol": "USDCAD",
+  "timeframe": "1h",
+  "model_family": "sklearn RandomForest",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 140,
+    "horizon": 6,
+    "threshold": 0.0012,
+    "min_confidence": 0.5,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

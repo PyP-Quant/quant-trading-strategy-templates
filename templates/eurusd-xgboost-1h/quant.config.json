@@ -1,1 +1,30 @@
-{"pair":"EURUSD","timeframe":"1h","model_family":"xgboost","runtime_target":"modal","artifact_format":"joblib_bundle","parameters":{"lookback":160,"horizon":3,"threshold":0.001,"min_confidence":0.48},"training_requirements":["numpy","pandas","scikit-learn","xgboost","joblib"],"inference_requirements":["numpy","pandas","scikit-learn","xgboost","joblib"]}
+{
+  "pair": "EURUSD",
+  "timeframe": "1h",
+  "model_family": "XGBoost",
+  "runtime_target": "modal",
+  "artifact_format": "joblib_bundle",
+  "parameters": {
+    "lookback": 160,
+    "horizon": 3,
+    "threshold": 0.001,
+    "min_confidence": 0.48
+  },
+  "training_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "joblib"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "joblib"
+  ],
+  "symbol": "EURUSD",
+  "description": "EURUSD feature-rich XGBoost trend classifier",
+  "disclaimer": "Educational template only. Not financial advice."
+}

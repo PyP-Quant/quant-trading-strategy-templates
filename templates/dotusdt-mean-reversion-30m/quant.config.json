@@ -1,0 +1,21 @@
+{
+  "name": "dotusdt-mean-reversion-30m",
+  "description": "custom Python PyP Quant template for DOTUSDT 30m.",
+  "symbol": "DOTUSDT",
+  "timeframe": "30m",
+  "model_family": "custom Python",
+  "artifact_target": "python",
+  "parameters": {
+    "lookback": 120,
+    "horizon": 4,
+    "threshold": 0.004,
+    "min_confidence": 0.5,
+    "sl_percent": 0.4,
+    "tp_percent": 0.8
+  },
+  "requirements": [
+    "numpy",
+    "pandas"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

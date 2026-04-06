@@ -1,0 +1,22 @@
+{
+  "name": "nas100-breakout-rf-15m",
+  "description": "sklearn RandomForest PyP Quant template for NAS100 15m.",
+  "symbol": "NAS100",
+  "timeframe": "15m",
+  "model_family": "sklearn RandomForest",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 100,
+    "horizon": 4,
+    "threshold": 0.0025,
+    "min_confidence": 0.5,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

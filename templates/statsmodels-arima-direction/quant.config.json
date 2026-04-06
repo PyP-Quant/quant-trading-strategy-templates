@@ -1,1 +1,26 @@
-{"pair":"EURUSD","timeframe":"1h","model_family":"statsmodels","runtime_target":"modal","artifact_format":"joblib_bundle","parameters":{"lookback":96,"entry_threshold":0.0004},"training_requirements":["numpy","pandas","statsmodels","joblib"],"inference_requirements":["numpy","pandas","statsmodels","joblib"]}
+{
+  "pair": "EURUSD",
+  "timeframe": "1h",
+  "model_family": "statsmodels",
+  "runtime_target": "modal",
+  "artifact_format": "joblib_bundle",
+  "parameters": {
+    "lookback": 96,
+    "entry_threshold": 0.0004
+  },
+  "training_requirements": [
+    "numpy",
+    "pandas",
+    "statsmodels",
+    "joblib"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas",
+    "statsmodels",
+    "joblib"
+  ],
+  "symbol": "EURUSD",
+  "description": "ARIMA-style statistical direction baseline",
+  "disclaimer": "Educational template only. Not financial advice."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "btcusdt-mean-reversion-5m",
+  "description": "custom Python PyP Quant template for BTCUSDT 5m.",
+  "symbol": "BTCUSDT",
+  "timeframe": "5m",
+  "model_family": "custom Python",
+  "artifact_target": "python",
+  "parameters": {
+    "lookback": 100,
+    "horizon": 4,
+    "threshold": 0.004,
+    "min_confidence": 0.5,
+    "sl_percent": 0.4,
+    "tp_percent": 0.8
+  },
+  "requirements": [
+    "numpy",
+    "pandas"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

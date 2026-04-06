@@ -1,7 +1,7 @@
 {
   "pair": "XAUUSD",
   "timeframe": "1h",
-  "model_family": "xgboost",
+  "model_family": "XGBoost",
   "runtime_target": "modal",
   "artifact_format": "joblib_bundle",
   "parameters": {
@@ -12,6 +12,21 @@
     "min_direction_prob": 0.38,
     "min_edge": 0.03
   },
-  "training_requirements": ["numpy", "pandas", "scikit-learn", "xgboost", "joblib"],
-  "inference_requirements": ["numpy", "pandas", "scikit-learn", "xgboost", "joblib"]
+  "training_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "joblib"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "xgboost",
+    "joblib"
+  ],
+  "symbol": "XAUUSD",
+  "description": "Less restrictive Au-79-style XAUUSD regime classifier",
+  "disclaimer": "Educational template only. Not financial advice."
 }

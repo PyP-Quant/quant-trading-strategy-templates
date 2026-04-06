@@ -1,1 +1,30 @@
-{"pair":"BTCUSDT","timeframe":"1h","model_family":"lightgbm","runtime_target":"modal","artifact_format":"joblib_bundle","parameters":{"lookback":120,"horizon":3,"threshold":0.006,"min_confidence":0.46},"training_requirements":["numpy","pandas","scikit-learn","lightgbm","joblib"],"inference_requirements":["numpy","pandas","scikit-learn","lightgbm","joblib"]}
+{
+  "pair": "BTCUSDT",
+  "timeframe": "1h",
+  "model_family": "LightGBM",
+  "runtime_target": "modal",
+  "artifact_format": "joblib_bundle",
+  "parameters": {
+    "lookback": 120,
+    "horizon": 3,
+    "threshold": 0.006,
+    "min_confidence": 0.46
+  },
+  "training_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "lightgbm",
+    "joblib"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "lightgbm",
+    "joblib"
+  ],
+  "symbol": "BTCUSDT",
+  "description": "BTCUSDT LightGBM crypto trend classifier",
+  "disclaimer": "Educational template only. Not financial advice."
+}

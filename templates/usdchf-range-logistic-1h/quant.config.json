@@ -1,0 +1,22 @@
+{
+  "name": "usdchf-range-logistic-1h",
+  "description": "sklearn LogisticRegression PyP Quant template for USDCHF 1h.",
+  "symbol": "USDCHF",
+  "timeframe": "1h",
+  "model_family": "sklearn LogisticRegression",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 140,
+    "horizon": 6,
+    "threshold": 0.0012,
+    "min_confidence": 0.48,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

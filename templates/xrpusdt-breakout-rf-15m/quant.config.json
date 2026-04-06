@@ -1,0 +1,22 @@
+{
+  "name": "xrpusdt-breakout-rf-15m",
+  "description": "sklearn RandomForest PyP Quant template for XRPUSDT 15m.",
+  "symbol": "XRPUSDT",
+  "timeframe": "15m",
+  "model_family": "sklearn RandomForest",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 100,
+    "horizon": 4,
+    "threshold": 0.004,
+    "min_confidence": 0.5,
+    "sl_percent": 0.4,
+    "tp_percent": 0.8
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

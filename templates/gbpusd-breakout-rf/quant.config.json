@@ -1,1 +1,28 @@
-{"pair":"GBPUSD","timeframe":"30m","model_family":"sklearn","runtime_target":"edge","artifact_format":"weights_bundle","parameters":{"lookback":120,"horizon":4,"threshold":0.0012,"min_confidence":0.5},"training_requirements":["numpy","pandas","scikit-learn","joblib"],"inference_requirements":["numpy","pandas","scikit-learn","joblib"]}
+{
+  "pair": "GBPUSD",
+  "timeframe": "30m",
+  "model_family": "sklearn RandomForest",
+  "runtime_target": "edge",
+  "artifact_format": "weights_bundle",
+  "parameters": {
+    "lookback": 120,
+    "horizon": 4,
+    "threshold": 0.0012,
+    "min_confidence": 0.5
+  },
+  "training_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "joblib"
+  ],
+  "inference_requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "joblib"
+  ],
+  "symbol": "GBPUSD",
+  "description": "GBPUSD range breakout random forest classifier",
+  "disclaimer": "Educational template only. Not financial advice."
+}

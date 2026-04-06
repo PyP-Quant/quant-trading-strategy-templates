@@ -1,0 +1,22 @@
+{
+  "name": "gbpusd-logistic-15m",
+  "description": "sklearn LogisticRegression PyP Quant template for GBPUSD 15m.",
+  "symbol": "GBPUSD",
+  "timeframe": "15m",
+  "model_family": "sklearn LogisticRegression",
+  "artifact_target": "joblib",
+  "parameters": {
+    "lookback": 100,
+    "horizon": 4,
+    "threshold": 0.0012,
+    "min_confidence": 0.48,
+    "sl_percent": 0.25,
+    "tp_percent": 0.5
+  },
+  "requirements": [
+    "numpy",
+    "pandas",
+    "scikit-learn"
+  ],
+  "disclaimer": "Educational template only. Not financial advice."
+}

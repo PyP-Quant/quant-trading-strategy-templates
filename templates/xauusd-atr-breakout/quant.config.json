@@ -7,8 +7,8 @@
   "parameters": {
     "lookback": 64,
     "atr_window": 14,
-    "breakout_window": 24,
-    "atr_mult": 0.25
+    "breakout_window": 12,
+    "atr_mult": 0.05
   },
   "training_requirements": [
     "numpy",

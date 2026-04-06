@@ -24,8 +24,8 @@ def predict(model, market_data, config):
     params = {**model.get("params", {}), **config.get("parameters", {})}
     lookback = int(params.get("lookback", 64))
     atr_window = int(params.get("atr_window", 14))
-    breakout_window = int(params.get("breakout_window", 24))
-    atr_mult = float(params.get("atr_mult", 0.25))
+    breakout_window = int(params.get("breakout_window", 12))
+    atr_mult = float(params.get("atr_mult", 0.05))
     candles = market_data.get("candles", [])
     if len(candles) < lookback:
         return {"signal": "HOLD", "confidence": 0.0, "metadata": {"reason": "not_enough_candles"}}

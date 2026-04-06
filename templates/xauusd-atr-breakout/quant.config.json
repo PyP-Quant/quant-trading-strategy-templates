@@ -10,14 +10,8 @@
     "breakout_window": 12,
     "atr_mult": 0.05
   },
-  "training_requirements": [
-    "numpy",
-    "pandas"
-  ],
-  "inference_requirements": [
-    "numpy",
-    "pandas"
-  ],
+  "training_requirements": [],
+  "inference_requirements": [],
   "symbol": "XAUUSD",
   "description": "XAUUSD ATR breakout rule baseline",
   "disclaimer": "Educational template only. Not financial advice."

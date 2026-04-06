@@ -8,5 +8,6 @@ The default gate is intentionally responsive so PPE produces more events than a 
 
 - `breakout_window`: `12`
 - `atr_mult`: `0.05`
+- no runtime package dependencies
 
 If it overtrades, raise `atr_mult` first. If it is still too quiet, shorten `breakout_window`.

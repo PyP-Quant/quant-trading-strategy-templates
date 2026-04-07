@@ -4,7 +4,7 @@ Custom Python precision-breakout baseline for XAUUSD.
 
 This project avoids ML on purpose. It is useful as a transparent benchmark to compare against heavier gold models like XGBoost or LightGBM.
 
-The default gate is intentionally selective for small accounts. It prioritizes avoiding churn over forcing trades. The continuation paths are available as parameters, but they are disabled by default because one-day lab tests showed the stricter breakout profile had cleaner drawdown.
+The default gate is tuned for the `1m` XAUUSD chart and small accounts. It prioritizes controlled churn over forcing oversized trades. The continuation paths are available as parameters, but they are disabled by default because one-day lab tests showed the stricter breakout profile had cleaner drawdown.
 
 It includes:
 
@@ -17,8 +17,9 @@ It includes:
 Current defaults:
 
 - `lookback`: `96`
-- `breakout_window`: `24`
-- `atr_mult`: `0.03`
+- `timeframe`: `1m`
+- `breakout_window`: `45`
+- `atr_mult`: `0.02`
 - `near_breakout_atr`: `0.18`
 - `pullback_atr`: `0.35`
 - `min_momentum_atr`: `0`

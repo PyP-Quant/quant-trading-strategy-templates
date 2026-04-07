@@ -1,14 +1,14 @@
 {
   "pair": "XAUUSD",
-  "timeframe": "15m",
+  "timeframe": "1m",
   "model_family": "custom Python",
   "runtime_target": "modal",
   "artifact_format": "python_bundle",
   "parameters": {
     "lookback": 96,
     "atr_window": 14,
-    "breakout_window": 24,
-    "atr_mult": 0.03,
+    "breakout_window": 45,
+    "atr_mult": 0.02,
     "near_breakout_atr": 0.18,
     "pullback_atr": 0.35,
     "min_momentum_atr": 0,

@@ -29,8 +29,8 @@ def train(data, config):
         "params": {
             "lookback": int(params.get("lookback", 96)),
             "atr_window": int(params.get("atr_window", 14)),
-            "breakout_window": int(params.get("breakout_window", 24)),
-            "atr_mult": float(params.get("atr_mult", 0.03)),
+            "breakout_window": int(params.get("breakout_window", 45)),
+            "atr_mult": float(params.get("atr_mult", 0.02)),
             "near_breakout_atr": float(params.get("near_breakout_atr", 0.18)),
             "pullback_atr": float(params.get("pullback_atr", 0.35)),
             "min_momentum_atr": float(params.get("min_momentum_atr", 0.0)),
@@ -47,8 +47,8 @@ def predict(model, market_data, config):
     params = {**model.get("params", {}), **config.get("parameters", {})}
     lookback = int(params.get("lookback", 96))
     atr_window = int(params.get("atr_window", 14))
-    breakout_window = int(params.get("breakout_window", 24))
-    atr_mult = float(params.get("atr_mult", 0.03))
+    breakout_window = int(params.get("breakout_window", 45))
+    atr_mult = float(params.get("atr_mult", 0.02))
     near_breakout_atr = float(params.get("near_breakout_atr", 0.18))
     pullback_atr = float(params.get("pullback_atr", 0.35))
     min_momentum_atr = float(params.get("min_momentum_atr", 0.0))

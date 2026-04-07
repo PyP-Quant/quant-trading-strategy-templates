@@ -7,13 +7,15 @@
   "parameters": {
     "lookback": 96,
     "atr_window": 14,
-    "breakout_window": 12,
-    "atr_mult": 0.05,
+    "breakout_window": 24,
+    "atr_mult": 0.03,
     "near_breakout_atr": 0.18,
     "pullback_atr": 0.35,
-    "min_momentum_atr": 0.08,
+    "min_momentum_atr": 0,
     "fast_ema": 8,
-    "slow_ema": 34
+    "slow_ema": 34,
+    "enable_near_breakout": false,
+    "enable_continuation": false
   },
   "training_requirements": [
     "numpy",

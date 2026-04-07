@@ -29,29 +29,33 @@ def train(data, config):
         "params": {
             "lookback": int(params.get("lookback", 96)),
             "atr_window": int(params.get("atr_window", 14)),
-            "breakout_window": int(params.get("breakout_window", 12)),
-            "atr_mult": float(params.get("atr_mult", 0.05)),
+            "breakout_window": int(params.get("breakout_window", 24)),
+            "atr_mult": float(params.get("atr_mult", 0.03)),
             "near_breakout_atr": float(params.get("near_breakout_atr", 0.18)),
             "pullback_atr": float(params.get("pullback_atr", 0.35)),
-            "min_momentum_atr": float(params.get("min_momentum_atr", 0.08)),
+            "min_momentum_atr": float(params.get("min_momentum_atr", 0.0)),
             "fast_ema": int(params.get("fast_ema", 8)),
             "slow_ema": int(params.get("slow_ema", 34)),
+            "enable_near_breakout": bool(params.get("enable_near_breakout", False)),
+            "enable_continuation": bool(params.get("enable_continuation", False)),
         },
-        "name": "xauusd_atr_breakout_v2",
-    }, {"training_bars": int(len(data)), "model": "modal_python_rule_breakout_continuation"}
+        "name": "xauusd_atr_breakout_precision",
+    }, {"training_bars": int(len(data)), "model": "modal_python_rule_precision_breakout"}
 
 
 def predict(model, market_data, config):
     params = {**model.get("params", {}), **config.get("parameters", {})}
     lookback = int(params.get("lookback", 96))
     atr_window = int(params.get("atr_window", 14))
-    breakout_window = int(params.get("breakout_window", 12))
-    atr_mult = float(params.get("atr_mult", 0.05))
+    breakout_window = int(params.get("breakout_window", 24))
+    atr_mult = float(params.get("atr_mult", 0.03))
     near_breakout_atr = float(params.get("near_breakout_atr", 0.18))
     pullback_atr = float(params.get("pullback_atr", 0.35))
-    min_momentum_atr = float(params.get("min_momentum_atr", 0.08))
+    min_momentum_atr = float(params.get("min_momentum_atr", 0.0))
     fast_ema = int(params.get("fast_ema", 8))
     slow_ema = int(params.get("slow_ema", 34))
+    enable_near_breakout = bool(params.get("enable_near_breakout", False))
+    enable_continuation = bool(params.get("enable_continuation", False))
     candles = market_data.get("candles", [])
     if len(candles) < lookback:
         return {"signal": "HOLD", "confidence": 0.0, "metadata": {"reason": "not_enough_candles"}}
@@ -108,11 +112,11 @@ def predict(model, market_data, config):
     # enter before the hard breakout instead of waiting for an extreme close.
     upper_pressure = (high - close) / atr
     lower_pressure = (close - low) / atr
-    if trend_up and upper_pressure <= near_breakout_atr and momentum_3 >= min_momentum_atr:
+    if enable_near_breakout and trend_up and upper_pressure <= near_breakout_atr and momentum_3 >= min_momentum_atr:
         edge = max(near_breakout_atr - upper_pressure, 0.0)
         quality = _clip01(max(ema_gap_atr, 0.0) * 0.35 + max(momentum_3, 0.0) * 0.35 + close_position * 0.20)
         return {"signal": "UP", "confidence": confidence(edge, quality, floor=0.57), "metadata": {**meta, "setup": "near_breakout_high"}}
-    if trend_down and lower_pressure <= near_breakout_atr and momentum_3 <= -min_momentum_atr:
+    if enable_near_breakout and trend_down and lower_pressure <= near_breakout_atr and momentum_3 <= -min_momentum_atr:
         edge = max(near_breakout_atr - lower_pressure, 0.0)
         quality = _clip01(max(-ema_gap_atr, 0.0) * 0.35 + max(-momentum_3, 0.0) * 0.35 + (1.0 - close_position) * 0.20)
         return {"signal": "DOWN", "confidence": confidence(edge, quality, floor=0.57), "metadata": {**meta, "setup": "near_breakout_low"}}
@@ -120,11 +124,11 @@ def predict(model, market_data, config):
     # Continuation path: after a breakout, gold often retests the fast EMA
     # without closing outside the range again. This keeps the system alive
     # while still requiring trend and momentum context.
-    if trend_up and close > high - atr * pullback_atr and prev_close <= close and momentum_6 >= 0:
+    if enable_continuation and trend_up and close > high - atr * pullback_atr and prev_close <= close and momentum_6 >= 0:
         edge = max((close - (high - atr * pullback_atr)) / atr, 0.0)
         quality = _clip01(max(ema_gap_atr, 0.0) * 0.35 + max(momentum_6, 0.0) * 0.25 + close_position * 0.25)
         return {"signal": "UP", "confidence": confidence(edge, quality, floor=0.55), "metadata": {**meta, "setup": "trend_continuation_high"}}
-    if trend_down and close < low + atr * pullback_atr and prev_close >= close and momentum_6 <= 0:
+    if enable_continuation and trend_down and close < low + atr * pullback_atr and prev_close >= close and momentum_6 <= 0:
         edge = max(((low + atr * pullback_atr) - close) / atr, 0.0)
         quality = _clip01(max(-ema_gap_atr, 0.0) * 0.35 + max(-momentum_6, 0.0) * 0.25 + (1.0 - close_position) * 0.25)
         return {"signal": "DOWN", "confidence": confidence(edge, quality, floor=0.55), "metadata": {**meta, "setup": "trend_continuation_low"}}
